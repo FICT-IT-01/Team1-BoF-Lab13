@@ -1,6 +1,6 @@
-package com.kpi.it01.team1.lab12.models;
+package com.kpi.it01.team1.lab13.models;
 
-import org.jetbrains.annotations.Nullable;
+import com.kpi.it01.team1.lab13.exceptions.FacultyAlreadyExistsException;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -36,7 +36,10 @@ public class Institute {
         this.name = name;
     }
 
-    public void addFaculty(Faculty faculty) throws NullPointerException {
+    public void addFaculty(Faculty faculty) throws FacultyAlreadyExistsException {
+        if (faculties.contains(faculty)) {
+            throw new FacultyAlreadyExistsException("This faculty is already at this list.");
+        }
         faculties.add(faculty);
     }
 
@@ -54,7 +57,6 @@ public class Institute {
         return amount;
     }
 
-    @Nullable
     public Faculty getBiggestFaculty() {
         int maxStudents = 0;
         Faculty output = faculties.iterator().next();

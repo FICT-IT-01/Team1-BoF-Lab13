@@ -1,4 +1,6 @@
-package com.kpi.it01.team1.lab12.models;
+package com.kpi.it01.team1.lab13.models;
+
+import com.kpi.it01.team1.lab13.exceptions.StudentAlreadyExistsException;
 
 import java.io.InvalidObjectException;
 import java.util.HashSet;
@@ -34,9 +36,9 @@ public class Faculty {
         return student.get();
     }
 
-    public void addStudent(Student student) throws NullPointerException, InvalidObjectException {
+    public void addStudent(Student student) throws StudentAlreadyExistsException {
         if (students.contains(student)) {
-            throw new InvalidObjectException("This student is already at this list.");
+            throw new StudentAlreadyExistsException("This student is already at this list.");
         }
 
         students.add(student);

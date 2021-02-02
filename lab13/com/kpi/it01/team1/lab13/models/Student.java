@@ -1,4 +1,4 @@
-package com.kpi.it01.team1.lab12.models;
+package com.kpi.it01.team1.lab13.models;
 
 public class Student {
     private final String id;
