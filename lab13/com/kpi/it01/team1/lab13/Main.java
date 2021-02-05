@@ -42,6 +42,8 @@ public class Main {
             for (var student : kpi.getStudentsWithAverageMarkInRange(95, 100)) {
                 System.out.println(student);
             }
-        } catch (StudentAlreadyExistsException | FacultyAlreadyExistsException ex){}
+        } catch (StudentAlreadyExistsException | FacultyAlreadyExistsException ex){
+            System.out.println("EXCEPTION! " + e.getMessage() + "\n");
+        }
     }
 }
