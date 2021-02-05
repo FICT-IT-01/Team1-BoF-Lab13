@@ -43,7 +43,7 @@ public class Main {
                 System.out.println(student);
             }
         } catch (StudentAlreadyExistsException | FacultyAlreadyExistsException ex){
-            System.out.println("EXCEPTION! " + e.getMessage() + "\n");
+            System.out.println("EXCEPTION! " + ex.getMessage() + "\n");
         }
     }
 }
